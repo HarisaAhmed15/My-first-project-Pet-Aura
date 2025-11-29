@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Me</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<section class="grooming-services">
+
+    <h2>Grooming Services for Your Pets</h2>
+
+    <form id="petServicesForm">
+
+        <!-- Services -->
+        <div class="service">
+            <input type="checkbox" id="Bathing" name="services" value="Bathing">
+            <label for="Bathing">Bathing</label>
+        </div>
+
+        <div class="service">
+            <input type="checkbox" id="FurTrimming" name="services" value="FurTrimming">
+            <label for="FurTrimming">Fur Trimming</label>
+        </div>
+
+        <div class="service">
+            <input type="checkbox" id="NailClipping" name="services" value="NailClipping">
+            <label for="NailClipping">Nail Clipping</label>
+        </div>
+
+        <h2>Fill In Your Details</h2>
+
+        <label>First Name:</label>
+        <input type="text" id="firstName">
+
+        <label>Last Name:</label>
+        <input type="text" id="lastName">
+
+        <label>Contact No:</label>
+        <input type="text" id="contactNo">
+
+        <label>Address:</label>
+        <input type="text" id="address">
+
+        <label>Postal Code:</label>
+        <textarea id="PostalCode"></textarea>
+
+        <label>Payment Method</label><br>
+        <input type="radio" name="payment" value="cod"> Cash on Delivery <br>
+        <input type="radio" name="payment" value="card"> Card Payment <br>
+        <input type="radio" name="payment" value="easypaisa"> Easypaisa / JazzCash <br>
+
+        <button type="submit">Confirm Your Service</button>
+    </form>
+
+    <div class="contact-info">
+        <h3>Our Contact Information</h3>
+        <p>Email: <b>petAura123@gmail.com ✉</b></p>
+        <p>Contact No: <b>+923457383929</b></p>
+    </div>
+</section>
+
+<script>
+document.getElementById("petServicesForm").addEventListener("submit", function(event) {
+
+    let selectedServices = document.querySelectorAll('input[name="services"]:checked');
+
+    let firstName = document.getElementById("firstName").value.trim();
+    let lastName = document.getElementById("lastName").value.trim();
+    let contactNo = document.getElementById("contactNo").value.trim();
+    let address = document.getElementById("address").value.trim();
+    let postalCode = document.getElementById("PostalCode").value.trim();
+
+    let payment = document.querySelector('input[name="payment"]:checked');
+
+    if (selectedServices.length === 0) {
+        alert("Please select at least one service!");
+        event.preventDefault();
+        return;
+    }
+
+    if (firstName === "" || lastName === "" || contactNo === "" || address === "" || postalCode === "") {
+        alert("Please fill in all personal details!");
+        event.preventDefault();
+        return;
+    }
+
+    if (contactNo.length !== 11 || isNaN(contactNo)) {
+        alert("Invalid Number! Contact number must be exactly 11 digits.");
+        event.preventDefault();
+        return;
+    }
+
+    if (!payment) {
+        alert("Please select a payment method!");
+        event.preventDefault();
+        return;
+    }
+
+    let services = Array.from(selectedServices).map(el => el.value).join(", ");
+    alert("Your order has been submitted successfully!\nServices: " + services + "\nOur team will contact you soon.");
+});
+</script>
+
+</body>
+</html>

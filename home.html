@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PetAura</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+       <h1 class="logo">
+            <img src="logopetaura.jpg" alt="logo" class="logo-img"> PetAura
+        </h1>
+
+        <nav>
+            <a href="home.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="pets.html">Pets & Companions</a>
+            <a href="services.html">Services</a>
+            <a href="blogs.html">Blogs</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+
+            <video class="hero-video" autoplay muted playsinline onended="showButton()">
+        <source src="pets6..mp4" type="video/mp4">
+        Your browser does not support video.
+    </video>
+
+    <div class="overlay">
+        <h2>Welcome to Your Pet Shopping Haven</h2>
+        <p>Happiness is a warm, fluffy friend.</p>
+
+        
+        <a href="pets.html" id="cta-btn" class="cta-btn hidden">Explore Pets</a>
+    </div>
+
+        </section>
+    </main>
+    <script>
+    function showButton() {
+        const btn = document.getElementById("cta-btn");
+        btn.classList.remove("hidden");
+        btn.classList.add("fade-in");
+    }
+</script>
+
+  
+  <footer>
+    <p>&copy; 2025 PetAura. All rights reserved.</p>
+  </footer>
+
+    
+    
+</body>
+</html>

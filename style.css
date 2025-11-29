@@ -1,0 +1,769 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #f7f3ff; 
+    color: #333;
+}
+
+h1, h2, p, a {
+    margin: 0;
+}
+
+
+header {
+    background: white;
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+
+.logo {
+    font-size: 26px;
+    font-weight: bold;
+    color: #6a28ad; /* purple */
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    width: 70px;
+    margin-right: 10px;
+}
+
+
+nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #6a28ad;
+    font-weight: bold;
+    position: relative;
+    transition: 0.3s ease-in-out;
+}
+
+
+nav a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 3px;
+    left: 0;
+    bottom: -4px;
+    background: #bb7bff;
+    border-radius: 5px;
+    transition: width 0.4s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+
+nav a:hover {
+    color: #9d40ff;
+    text-shadow: 0 0 8px #d4b3ff;
+}
+
+
+.hero {
+    position: relative;
+    text-align: center;
+}
+
+.hero-video {
+    width: 100%;
+    height: 520px;
+    object-fit: cover;
+    filter: brightness(70%);
+}
+
+
+.hidden {
+    display: none;
+}
+
+
+.fade-in {
+    display: inline-block;
+    animation: fadeInButton 1.8s ease forwards;
+}
+
+@keyframes fadeInButton {
+    0% { opacity: 0; transform: translateY(10px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+
+
+
+.overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-shadow: 0 0 10px black;
+    animation: fadeIn 2s ease;
+}
+
+.overlay h2 {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.overlay p {
+    font-size: 22px;
+}
+
+
+.cta-btn {
+    display: inline-block;
+    margin-top: 18px;
+    padding: 12px 28px;
+    background: #8e4cf7;
+    color: white;
+    font-size: 18px;
+    border-radius: 40px;
+    text-decoration: none;
+    transition: 0.4s ease;
+}
+
+
+.cta-btn:hover {
+    background: #b07cff;
+    box-shadow: 0 0 18px #c79dff;
+    transform: scale(1.05);
+}
+
+
+@keyframes fadeIn {
+    from {opacity: 0; transform: translate(-50%, -45%);}
+    to {opacity: 1; transform: translate(-50%, -50%);}
+}
+
+/* --- Categories (Dogs, Cats) --- */
+.categories {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.categories a {
+    display: inline-block;
+    background-color: #ba7cff; /* purple color */
+    color: white;
+    text-decoration: none;
+    padding: 10px 25px;
+    margin: 10px;
+    border-radius: 8px;
+    font-size: 20px;
+}
+
+.categories a:hover {
+    background-color: #9b5ce7;
+}
+
+/* --- Dog breeds section (2 rows, 3 columns) --- */
+.breeds {
+    width: 90%;
+    margin: auto;
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;    /* allows pictures to go into 2 rows */
+    justify-content: center;
+}
+
+.breeds div {
+    width: 30%;          /* three cards in one row */
+    background: white;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+.breeds img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;    /* keeps image neat */
+    border-radius: 8px;
+}
+.dogs:hover,
+.cats:hover,
+.rabbits:hover {
+    transform: scale(1.05);   /* Slight zoom */
+    transition: 0.3s ease;    /* Smooth animation */
+    cursor: pointer;          /* Hand cursor on hover */
+     box-shadow: 0 0 15px rgba(0,0,0,0.3);
+
+}
+
+.buy-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color:#8e4cf7;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.buy-btn:hover {
+    background-color: #8e4cf7;
+    transform: scale(1.05);
+}
+
+/* Text inside the cards */
+.breeds h3 {
+    color: #111112;
+    margin: 8px 0;
+}
+
+.breeds h4 {
+    color: #0d0d0d;
+    margin: 5px 0;
+}
+
+
+
+footer {
+    text-align: center;
+    padding: 15px;
+    background: #e8d8ff;
+    margin-top: 20px;
+    color: #4e2a6f;
+}
+
+/* ===== Services Page Styling ===== */
+
+/* SERVICES PAGE STYLING */
+
+/* Overall section */
+.services-section {
+    text-align: center;
+    margin-top: 40px;
+}
+
+/* Heading */
+.services-section h1 {
+    color: #6a0dad;   /* purple */
+    margin-bottom: 30px;  /* space below heading */
+}
+
+/* Service boxes grid */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);  /* 2 boxes per row */
+    gap: 20px;  /* space between boxes */
+    width: 70%;
+    margin: 0 auto;  /* center the whole grid */
+}
+
+/* Center the last box because there are only 3 */
+.services-grid a:nth-child(3) {
+    grid-column: 1 / span 2;   /* make it stretch across the row */
+    width: 40%;
+    justify-self: center;      /* center it */
+}
+
+/* Service box buttons */
+.services-grid a {
+    background-color: #b57bff;   /* soft purple */
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Hover effect */
+.services-grid a:hover {
+    background-color: #9b5ce7;
+    transform: scale(1.05);  /* slight zoom on hover */
+    transition: 0.2s;
+}
+
+/* Contact Section */
+.contact-container {
+    max-width: 700px;
+    margin: 40px auto;
+    background: #f8f0ff;         /* very light purple */
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.contact-container h2 {
+    text-align: center;
+    color: #6a0dad;
+    margin-bottom: 20px;
+}
+
+/* Form Styling */
+#contact {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+#contact label {
+    font-size: 16px;
+    color: #4b247a;
+}
+
+#contact input,
+#contact textarea {
+    padding: 10px;
+    border: 1px solid #caa4ff;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+#contact textarea {
+    height: 120px;
+    resize: none;
+}
+
+/* Submit Button */
+#contact button {
+    background-color: #6a0dad;
+    color: white;
+    padding: 12px;
+    font-size: 17px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+#contact button:hover {
+    background-color: #8a35e0;
+}
+
+/* Contact Information Box */
+.contact-info {
+    background: #e7d5ff;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 25px;
+}
+
+.contact-info h3 {
+    color: #6a0dad;
+    margin-bottom: 10px;
+}
+
+.contact-info p {
+    font-size: 16px;
+    margin: 6px 0;
+    color: #3f2167;
+}
+
+/* Doctor Services Page */
+.doctor-services {
+    width: 80%;
+    margin: 40px auto;
+    background: #f3e8ff; /* light purple background */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.doctor-services h2 {
+    text-align: center;
+    color: #6a0dad;
+    margin-bottom: 20px;
+}
+
+/* Service checkbox options */
+.service {
+    background: #ffffff;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #d8b9ff;
+}
+
+.service label {
+    margin-left: 10px;
+    font-size: 18px;
+    color: #4b247a;
+}
+
+/* General form styling */
+#petServicesForm label {
+    display: block;
+    font-size: 18px;
+    margin-top: 15px;
+    color: #6a0dad;
+}
+
+#petServicesForm input[type="text"],
+#petServicesForm input[type="contact No"],
+#petServicesForm textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #cba8ff;
+    border-radius: 6px;
+    margin-top: 5px;
+    background: #fff;
+}
+
+/* Radio buttons */
+#petServicesForm input[type="radio"] {
+    margin-right: 5px;
+    margin-top: 10px;
+}
+
+/* Button styling */
+#petServicesForm button {
+    width: 100%;
+    background: #6a0dad;
+    color: white;
+    padding: 12px;
+    border: none;
+    margin-top: 20px;
+    font-size: 18px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+#petServicesForm button:hover {
+    background: #4b0a8a;
+}
+
+/* Contact info section */
+.contact-info {
+    margin-top: 40px;
+    background: #e4cfff;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.contact-info h3 {
+    color: #6a0dad;
+    margin-bottom: 10px;
+}
+
+/* ===== GENERAL PAGE STYLING ===== */
+body {
+    font-family: Arial, sans-serif;
+    background: #f8f8f8;
+    margin: 0;
+    padding: 0;
+}
+
+/* ===== SECTION HEADING ===== */
+.grooming-services h2 {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+/* ===== SERVICES CHECKBOX GRID ===== */
+.service {
+    display: flex;
+    align-items: center;
+    margin: 10px auto;
+    width: 200px;           /* keeps boxes same width */
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: white;
+}
+
+.service label {
+    margin-left: 10px;
+    font-size: 16px;
+}
+
+/* ===== FORM FIELDS ===== */
+form {
+    width: 80%;
+    max-width: 500px;
+    margin: auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+input[type="text"], textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #aaa;
+    border-radius: 6px;
+    margin-top: 5px;
+}
+
+/* ===== PAYMENT RADIO BUTTONS ===== */
+input[type="radio"] {
+    margin-top: 10px;
+}
+
+/* ===== CONFIRM BUTTON ===== */
+button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin-top: 20px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* ===== CONTACT INFO BOX ===== */
+.contact-info {
+    width: 80%;
+    max-width: 500px;
+    background: white;
+    padding: 20px;
+    margin: 25px auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.contact-info h3 {
+    text-align: center;
+}
+/* Delivery Page Styling */
+.delivery {
+    max-width: 700px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #f3e8ff; /* light purple background */
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    font-family: Arial, sans-serif;
+}
+
+.delivery h2 {
+    text-align: center;
+    color: #6a0dad; /* deep purple heading */
+    margin-bottom: 30px;
+}
+
+/* Form Styling */
+.delivery form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.delivery label {
+    font-weight: bold;
+    color: #4b247a;
+}
+
+.delivery input[type="text"],
+.delivery input[type="contact No"],
+.delivery textarea {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #b57bff;
+    outline: none;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.delivery textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+/* Radio Buttons */
+.delivery input[type="radio"] {
+    margin-right: 10px;
+}
+
+/* Submit Button */
+.delivery button {
+    background-color: #6a0dad;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.delivery button:hover {
+    background-color: #9b5ce7;
+}
+
+/* Contact Info Box */
+.delivery .contact-info {
+    margin-top: 30px;
+    padding: 15px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.delivery .contact-info h3 {
+    color: #6a0dad;
+    margin-bottom: 10px;
+}
+
+.delivery .contact-info p {
+    color: #4b247a;
+    margin: 5px 0;
+}
+/* ====== Blog Page Styling ====== */
+/* Blog Heading */
+.blogheading h2 {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 28px;
+    color:#6a0dad;
+}
+
+/* Blog Section Layout */
+.blog-section {
+    width: 85%;
+    max-width: 900px;
+    margin: 30px auto;
+}
+
+/* Each blog entry (No boxes) */
+.blog-card {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ccc;  /* simple separator line */
+}
+
+.blog-card:last-child {
+    border-bottom: none;
+}
+
+/* Text styling */
+.blog-content h2 {
+    font-size: 24px;
+    color: #5a0795;
+    margin-bottom: 10px;
+}
+
+.blog-content p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #444;
+}
+
+.blog-content ul {
+    margin-top: 10px;
+    padding-left: 20px;
+}
+
+.blog-content li {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+
+
+   
+/* ---------- ABOUT MAIN CONTAINER ---------- */
+.about-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+    gap: 30px;
+    flex-wrap: wrap; /* mobile friendly */
+}
+
+.about-text {
+    width: 55%;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 6px rgba(0,0,0,0.1);
+}
+
+.about-text h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: #6a0dad;
+}
+
+.about-text p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.about-text ul {
+    padding-left: 20px;
+}
+
+.about-text ul li {
+    margin-bottom: 8px;
+}
+
+/* ---------- RIGHT SIDE IMAGE ---------- */
+.about-image {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0px 2px 6px rgba(0,0,0,0.2);
+}
+
+/* ---------- HIGHLIGHT BOXES ---------- */
+.highlights {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 30px;
+    gap: 20px;
+}
+
+.highlight {
+    width: 45%;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 6px rgba(0,0,0,0.1);
+}
+
+.highlight h3 {
+    color: #6a0dad;
+    margin-bottom: 10px;
+}
+
+.highlight p {
+    line-height: 1.6;
+}
+
+
+

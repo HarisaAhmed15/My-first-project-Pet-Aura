@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Me</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+  <section class="contact-container">
+
+    <h2>Contact Form</h2>
+
+    <form id="contact">
+
+        <label>Name:</label>
+        <input type="text" id="name">
+
+        <label>Contact No:</label>
+        <input type="text" id="phone">
+
+        <label>Message:</label>
+        <textarea id="message"></textarea>
+
+        <button type="submit">Submit Message</button>
+
+    </form>
+
+    <div class="contact-info">
+        <h3>Our Contact Information</h3>
+        <p>Email: <b>petAura123@gmail.com ✉</b></p>
+        <p>Contact No: <b>+923457383929</b></p>
+    </div>
+
+</section>
+
+
+
+<script>
+document.getElementById("contact").addEventListener("submit", function(event) {
+
+    let name = document.getElementById("name").value.trim();
+    let phone = document.getElementById("phone").value.trim();
+    let message = document.getElementById("message").value.trim();
+
+    if (phone.length !== 11) {
+        alert("Invalid Number! Please enter 11 digits.");
+        event.preventDefault();
+        return;
+    }
+
+    alert("Form submitted successfully! Our team will contact you soon.");
+});
+</script>
+
+  
+
+</body>
+</html>
