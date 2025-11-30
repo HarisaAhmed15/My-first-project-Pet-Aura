@@ -13,7 +13,7 @@
 - JavaScript
 
 ## 🎯 Project Purpose
-This website is created to learn and implement frontend web development concepts, UI/UX designing, interactivity using JavaScript, and structuring a real eCommerce project from scratch.
+This website is created to learn and implement frontend web development concepts, interactivity using JavaScript, and structuring a real eCommerce project from scratch.
 
  ## Group Members
 | Harisa Ahmed | 25f-0647
